@@ -659,7 +659,9 @@ class EventData {
     int n = 6;
     String maxN(String v)       => v.length > n? v.substring(0,n) : v.substring(0, v.length);
 
-    String name = getAuthorName(pubkey);    
+    String shortName = getAuthorName(pubkey);
+    //String nip05 = getNip05Name(this.pubkey);
+    String name = shortName + ":" + pubkey;
     String strDate = getPrintableDate(createdAt);
     String tempEvaluatedContent = evaluatedContent;
     String tempContent = content;
